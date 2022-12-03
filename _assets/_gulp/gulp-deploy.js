@@ -46,8 +46,8 @@ function log_free(projectName){
     
     const size = splited[splited.length-1]
     const name = splited[0]
-    const eastWest = splited[1]
-    const lang = splited[2]
+    const type = splited[1]
+    
 
 
     
@@ -74,7 +74,8 @@ function log_free(projectName){
         .pipe(replace("takanaClient.run({host: 'localhost:48626'});", ''))
         
         
-        .pipe(replace("../_common/images/"+size+"/_"+name+"/", ''))
+        .pipe(replace("../_common/images/"+size+"/"+type+"/", ''))
+        .pipe(replace("../_common/images/"+size+"/snow/", ''))
         .pipe(replace("../_common/images/"+size+"/", ''))
         .pipe(replace("txt/", ''))
         .pipe(replace("<title>", '<title>Created: '+moment().format('MMM D, h:mm')))
