@@ -38,7 +38,9 @@ function v3() {
 	snow.from(".snow-2", { x: "-=50", duration: 2, ease: Power1.easeOut }, 0);
 	snow.from(".snow-3", { x: "-=50", duration: 4, ease: Power1.easeOut }, 0);
 	snow.from(".snow-4", { x: "-=30", duration: 6, ease: Power1.easeOut }, 0);
-	snow.to(".flake", { y: "+=" + bannerSize.h, duration: Math.max(bannerSize.h / 100, 1.7), opacity: 0, ease: Power1.easeOut, repeat: 1 }, 0);
+	var duration = Math.max(bannerSize.h / 38, 1.7);
+	console.log(duration);
+	snow.to(".flake", { y: "+=" + bannerSize.h, duration: duration, opacity: 0, ease: Power1.easeOut, repeat: 0 }, 0);
 }
 
 exports.init = init;
