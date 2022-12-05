@@ -7,7 +7,6 @@ Object.defineProperty(exports, "__esModule", {
 var banner = document.getElementById('banner');
 var bannerSize = { w: banner.offsetWidth, h: banner.offsetHeight };
 
-console.log(bannerSize.h / 100);
 gsap.defaults({
 	ease: "power.out"
 });
@@ -39,7 +38,7 @@ function v3() {
 	snow.from(".snow-3", { x: "-=50", duration: 4, ease: Power1.easeOut }, 0);
 	snow.from(".snow-4", { x: "-=30", duration: 6, ease: Power1.easeOut }, 0);
 	var duration = Math.max(bannerSize.h / 38, 1.7);
-	console.log(duration);
+
 	snow.to(".flake", { y: "+=" + bannerSize.h, duration: duration, opacity: 0, ease: Power1.easeOut, repeat: 0 }, 0);
 }
 
