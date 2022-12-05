@@ -1,6 +1,7 @@
 const banner = document.getElementById('banner')
 const bannerSize = {w:banner.offsetWidth, h:banner.offsetHeight}
 
+console.log(bannerSize.h/100);
 gsap.defaults({
   ease: "power.out"
 });
@@ -22,16 +23,16 @@ function v1(){
 
 function v3(tag=70){
 	const tl = init()	
-	tl.from(".tag", {opacity:0, duration:.7, y:`-=${tag}`, ease:Elastic.easeOut}, .5)	
+	// tl.from(".tag", {opacity:0, duration:.7, y:`-=${tag}`, ease:Elastic.easeOut}, .5)	
 	tl.from(".title", {opacity:0, duration:.3})	
-	tl.from(".cta", {opacity:0, duration:.3}, "+=2")	
+	tl.from(".cta", {opacity:0, duration:.3}, "+=1.3")	
 
 	const snow = new TimelineMax()
 	snow.from(".snow-1", {x:"-=50", duration:3, ease:Power1.easeOut}, 0)	
 	snow.from(".snow-2", {x:"-=50", duration:2, ease:Power1.easeOut}, 0)	
 	snow.from(".snow-3", {x:"-=50", duration:4, ease:Power1.easeOut}, 0)	
-	snow.from(".snow-4", {x:"-=30", duration:5, ease:Power1.easeOut}, 0)	
-	snow.from(".flake", {y:"-=20", opacity:0, duration:1, ease:Power1.easeOut}, 0)	
+	snow.from(".snow-4", {x:"-=30", duration:6, ease:Power1.easeOut}, 0)	
+	snow.to(".flake", {y:`+=${bannerSize.h}`, duration:Math.max(bannerSize.h/100, 1.7), opacity:0, ease:Power1.easeOut, repeat:1}, 0)	
 
 }
 
